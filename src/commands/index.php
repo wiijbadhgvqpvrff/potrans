@@ -1,4 +1,5 @@
 <?php
+
 namespace potrans;
 
 // Disable deprecated warnings
@@ -6,6 +7,7 @@ error_reporting(E_ALL & ~E_DEPRECATED);
 
 use potrans\commands\DeepLTranslatorCommand;
 use potrans\commands\GoogleTranslatorCommand;
+use potrans\commands\FreeGoogleTranslatorCommand;
 use Symfony\Component\Console\Application;
 
 if (file_exists(__DIR__ . '/../../vendor/autoload.php')) {
@@ -19,6 +21,7 @@ $application->addCommands(
 	[
 		new GoogleTranslatorCommand('google'),
 		new DeepLTranslatorCommand('deepl'),
+		new FreeGoogleTranslatorCommand('freegoogle'),
 	]
 );
 $application->run();
